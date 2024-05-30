@@ -79,15 +79,15 @@ https://huggingface.co/openai/clip-vit-large-patch14/resolve/main/model.safetens
 # ControlNet v1.1
 # More models: https://huggingface.co/lllyasviel/sd_control_collection
 
-#https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f1p_sd15_depth.pth
-#  dir=models/controlnet
-#  out=control_v11f1p_sd15_depth.pth
-#https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_canny.pth
-#  dir=models/controlnet
-#  out=control_v11p_sd15_canny.pth
-#https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_openpose.pth
-#  dir=models/controlnet
-#  out=control_v11p_sd15_openpose.pth
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f1p_sd15_depth.pth
+  dir=models/controlnet
+  out=control_v11f1p_sd15_depth.pth
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_canny.pth
+  dir=models/controlnet
+  out=control_v11p_sd15_canny.pth
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_openpose.pth
+  dir=models/controlnet
+  out=control_v11p_sd15_openpose.pth
 #https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11e_sd15_ip2p.pth
 #  dir=models/controlnet
 #  out=control_v11e_sd15_ip2p.pth
