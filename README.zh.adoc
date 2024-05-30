@@ -1,5 +1,7 @@
 # 用于 ComfyUI 的 Docker 镜像
 
+2024-5-30进行的fork
+
 image:https://github.com/YanWenKun/ComfyUI-Docker/actions/workflows/build-latest.yml/badge.svg["GitHub Workflow Status",link="https://github.com/YanWenKun/ComfyUI-Docker/actions"]
 image:https://github.com/YanWenKun/ComfyUI-Docker/actions/workflows/build-rocm.yml/badge.svg["GitHub Workflow Status",link="https://github.com/YanWenKun/ComfyUI-Docker/tree/main/rocm"]
 image:https://github.com/YanWenKun/ComfyUI-Docker/actions/workflows/build-megapak.yml/badge.svg["GitHub Workflow Status",link="https://github.com/YanWenKun/ComfyUI-Docker/tree/main/megapak"]
