@@ -1,11 +1,11 @@
 ################################################################################
-# Dockerfile that builds 'yanwk/comfyui-boot:latest'
+# Dockerfile that builds 'wangtz/comfyui-boot:latest'
 # A runtime environment for https://github.com/comfyanonymous/ComfyUI
 ################################################################################
 
 FROM opensuse/tumbleweed:latest
 
-LABEL maintainer="code@yanwk.fun"
+LABEL maintainer="wangtz"
 
 # Note: GCC for InsightFace;
 #       FFmpeg for video (pip[imageio-ffmpeg] will use system FFmpeg instead of bundled).
@@ -73,17 +73,33 @@ RUN --mount=type=cache,target=/root/.cache/pip \
         compel lark torchdiffeq fairscale \
         python-ffmpeg
 
-# Additional deps for ComfyUI-3D-Pack (prebuilt by me)
+
+# 自定义插件安装依赖
 RUN --mount=type=cache,target=/root/.cache/pip \
     pip install --break-system-packages \
-        https://github.com/YanWenKun/ComfyUI-3D-Pack-LinuxWheels/releases/download/v2/diff_gaussian_rasterization-0.0.0-cp311-cp311-linux_x86_64.whl \
-        https://github.com/YanWenKun/ComfyUI-3D-Pack-LinuxWheels/releases/download/v2/kiui-0.2.7-py3-none-any.whl \
-        https://github.com/YanWenKun/ComfyUI-3D-Pack-LinuxWheels/releases/download/v2/nvdiffrast-0.3.1-py3-none-any.whl \
-        https://github.com/YanWenKun/ComfyUI-3D-Pack-LinuxWheels/releases/download/v2/pointnet2_ops-3.0.0-cp311-cp311-linux_x86_64.whl \
-        https://github.com/YanWenKun/ComfyUI-3D-Pack-LinuxWheels/releases/download/v2/pytorch3d-0.7.6-cp311-cp311-linux_x86_64.whl \
-        https://github.com/YanWenKun/ComfyUI-3D-Pack-LinuxWheels/releases/download/v2/simple_knn-0.0.0-cp311-cp311-linux_x86_64.whl \
-        https://github.com/YanWenKun/ComfyUI-3D-Pack-LinuxWheels/releases/download/v2/torch_scatter-2.1.2-cp311-cp311-linux_x86_64.whl \
-        https://github.com/YanWenKun/ComfyUI-3D-Pack-LinuxWheels/releases/download/v2/torchmcubes-0.1.0-cp311-cp311-linux_x86_64.whl
+        -r https://github.com/Jcd1230/rembg-comfyui-node/main/requirements.txt \
+        -r https://github.com/AlekPet/ComfyUI_Custom_Nodes_AlekPet/main/requirements.txt \
+        -r https://github.com/pythongosssss/ComfyUI-WD14-Tagger/main/requirements.txt \
+        -r https://github.com/cubiq/ComfyUI_IPAdapter_plus/main/requirements.txt \
+        -r https://github.com/cubiq/ComfyUI_essentials/main/requirements.txt \
+        -r https://github.com/chflame163/ComfyUI_LayerStyle/main/requirements.txt \
+        -r https://github.com/yolain/ComfyUI-Easy-Use/main/requirements.txt \
+        -r https://github.com/Loewen-Hob/rembg-comfyui-node-better/main/requirements.txt \
+        -r https://github.com/Mamaaaamooooo/batchImg-rembg-ComfyUI-nodes/main/requirements.txt \
+        -r https://github.com/huchenlei/ComfyUI-layerdiffuse
+
+
+# # Additional deps for ComfyUI-3D-Pack (prebuilt by me)
+# RUN --mount=type=cache,target=/root/.cache/pip \
+#     pip install --break-system-packages \
+#         https://github.com/YanWenKun/ComfyUI-3D-Pack-LinuxWheels/releases/download/v2/diff_gaussian_rasterization-0.0.0-cp311-cp311-linux_x86_64.whl \
+#         https://github.com/YanWenKun/ComfyUI-3D-Pack-LinuxWheels/releases/download/v2/kiui-0.2.7-py3-none-any.whl \
+#         https://github.com/YanWenKun/ComfyUI-3D-Pack-LinuxWheels/releases/download/v2/nvdiffrast-0.3.1-py3-none-any.whl \
+#         https://github.com/YanWenKun/ComfyUI-3D-Pack-LinuxWheels/releases/download/v2/pointnet2_ops-3.0.0-cp311-cp311-linux_x86_64.whl \
+#         https://github.com/YanWenKun/ComfyUI-3D-Pack-LinuxWheels/releases/download/v2/pytorch3d-0.7.6-cp311-cp311-linux_x86_64.whl \
+#         https://github.com/YanWenKun/ComfyUI-3D-Pack-LinuxWheels/releases/download/v2/simple_knn-0.0.0-cp311-cp311-linux_x86_64.whl \
+#         https://github.com/YanWenKun/ComfyUI-3D-Pack-LinuxWheels/releases/download/v2/torch_scatter-2.1.2-cp311-cp311-linux_x86_64.whl \
+#         https://github.com/YanWenKun/ComfyUI-3D-Pack-LinuxWheels/releases/download/v2/torchmcubes-0.1.0-cp311-cp311-linux_x86_64.whl
 
 # 1. Fix ONNX Runtime "missing CUDA provider". Also add support for CUDA 12.1.
 #    Ref: https://onnxruntime.ai/docs/install/

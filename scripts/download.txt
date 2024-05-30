@@ -1,3 +1,13 @@
+# sd
+https://huggingface.co/philz1337x/flat2DAnimerge_v45Sharp/blob/main/flat2DAnimerge_v45Sharp.safetensors
+  dir=models/Stable-diffusion
+  flatLunarSushi_v10.safetensors
+
+# sdxl
+https://huggingface.co/CalypsoCrunchies99/sdxlyamersanimeulturaysAnimev4_vaefix/blob/main/unet/diffusion_pytorch_model.safetensors
+  dir=models/Stable-diffusion
+  sdxlYamersAnimeUltra_ysAnimeV4.safetensors
+
 # Stable Cascade
 
 #https://huggingface.co/stabilityai/stable-cascade/resolve/main/comfyui_checkpoints/stable_cascade_stage_c.safetensors
@@ -63,9 +73,13 @@ https://huggingface.co/lenML/DeepNegative/resolve/main/NG_DeepNegative_V1_75T.pt
 
 # CLIP Vision
 
-https://huggingface.co/openai/clip-vit-large-patch14/resolve/main/model.safetensors
+https://huggingface.co/laion/CLIP-ViT-H-14-laion2B-s32B-b79K/blob/main/model.safetensors
   dir=models/clip_vision
-  out=clip_vit14.safetensors
+  CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors
+
+# https://huggingface.co/openai/clip-vit-large-patch14/resolve/main/model.safetensors
+#   dir=models/clip_vision
+#   out=clip_vit14.safetensors
 #https://huggingface.co/stabilityai/control-lora/resolve/main/revision/clip_vision_g.safetensors
 #  dir=models/clip_vision
 #  out=control-lora-clip_vision_g.safetensors
@@ -136,3 +150,10 @@ https://huggingface.co/openai/clip-vit-large-patch14/resolve/main/model.safetens
 #https://huggingface.co/stabilityai/control-lora/resolve/main/control-LoRAs-rank256/control-lora-sketch-rank256.safetensors
 #  dir=models/controlnet
 #  out=control-lora-sketch-rank256.safetensors
+
+
+
+# IPAdapter
+https://huggingface.co/InvokeAI/ip_adapter_plus_sd15/blob/main/ip-adapter-plus_sd15.safetensors
+  dir=models/ipadapter
+  out=ip-adapter-plus_sd15.safetensors
