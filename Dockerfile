@@ -77,7 +77,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 # 自定义插件安装依赖
 RUN --mount=type=cache,target=/root/.cache/pip \
     pip install --break-system-packages \
-        -r https://github.com/Jcd1230/rembg-comfyui-node/main/requirements.txt \
+        -r https://raw.githubusercontent.com/Jcd1230/rembg-comfyui-node/blob/master/requirements.txt \
         -r https://github.com/AlekPet/ComfyUI_Custom_Nodes_AlekPet/main/requirements.txt \
         -r https://github.com/pythongosssss/ComfyUI-WD14-Tagger/main/requirements.txt \
         -r https://github.com/cubiq/ComfyUI_IPAdapter_plus/main/requirements.txt \
@@ -139,21 +139,6 @@ RUN printf 'CREATE_MAIL_SPOOL=no' >> /etc/default/useradd \
     && chown runner:runner /home/runner /home/scripts
 
 COPY --chown=runner:runner scripts/. /home/scripts/
-
-# 更新和安装必要的工具
-RUN apt-get update && apt-get install -y git aria2
-
-# 设置工作目录
-WORKDIR /home/runner
-
-# 确保脚本具有执行权限，并根据条件执行脚本
-RUN if [ ! -f "/home/runner/.download-complete" ]; then \
-        echo "start download"; \
-        chmod +x /home/scripts/download.sh && \
-        bash /home/scripts/download.sh; \
-    else \
-        echo "download completed"; \
-    fi
 
 USER runner:runner
 VOLUME /home/runner
