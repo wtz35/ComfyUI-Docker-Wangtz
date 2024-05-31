@@ -18,6 +18,13 @@ if [ ! -f "/home/runner/.download-complete" ] ; then
     bash /home/scripts/download.sh
 fi ;
 
+# Update ComfyUI
+cd /home/runner
+if [ ! -f "/home/runner/.update-complete" ] ; then
+    chmod +x /home/scripts/update.sh
+    bash /home/scripts/update.sh
+fi ;
+
 # Run user's pre-start script
 cd /home/runner
 if [ -f "/home/runner/scripts/pre-start.sh" ] ; then

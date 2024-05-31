@@ -18,12 +18,6 @@ git clone --depth=1 --no-tags --recurse-submodules --shallow-submodules \
     https://github.com/ltdrdata/ComfyUI-Manager.git \
     || (cd /home/runner/ComfyUI/custom_nodes/ComfyUI-Manager && git pull)
 
-# ComfyUI_Custom_Nodes_AlekPet
-cd /home/runner/ComfyUI/custom_nodes
-git clone --depth=1 --no-tags --recurse-submodules --shallow-submodules \
-    https://github.com/AlekPet/ComfyUI_Custom_Nodes_AlekPet.git \
-    || (cd /home/runner/ComfyUI/custom_nodes/ComfyUI_Custom_Nodes_AlekPet && git pull)
-
 # ComfyUI-WD14-Tagger
 cd /home/runner/ComfyUI/custom_nodes
 git clone --depth=1 --no-tags --recurse-submodules --shallow-submodules \

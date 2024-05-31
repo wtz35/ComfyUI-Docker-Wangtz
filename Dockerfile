@@ -77,16 +77,13 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 # 自定义插件安装依赖
 RUN --mount=type=cache,target=/root/.cache/pip \
     pip install --break-system-packages \
-        -r https://raw.githubusercontent.com/Jcd1230/rembg-comfyui-node/blob/master/requirements.txt \
-        -r https://github.com/AlekPet/ComfyUI_Custom_Nodes_AlekPet/main/requirements.txt \
-        -r https://github.com/pythongosssss/ComfyUI-WD14-Tagger/main/requirements.txt \
-        -r https://github.com/cubiq/ComfyUI_IPAdapter_plus/main/requirements.txt \
-        -r https://github.com/cubiq/ComfyUI_essentials/main/requirements.txt \
-        -r https://github.com/chflame163/ComfyUI_LayerStyle/main/requirements.txt \
-        -r https://github.com/yolain/ComfyUI-Easy-Use/main/requirements.txt \
-        -r https://github.com/Loewen-Hob/rembg-comfyui-node-better/main/requirements.txt \
-        -r https://github.com/Mamaaaamooooo/batchImg-rembg-ComfyUI-nodes/main/requirements.txt \
-        -r https://github.com/huchenlei/ComfyUI-layerdiffuse
+        -r https://raw.githubusercontent.com/Jcd1230/rembg-comfyui-node/master/requirements.txt \
+        -r https://raw.githubusercontent.com/pythongosssss/ComfyUI-WD14-Tagger/main/requirements.txt \
+        -r https://raw.githubusercontent.com/cubiq/ComfyUI_essentials/main/requirements.txt \
+        -r https://raw.githubusercontent.com/chflame163/ComfyUI_LayerStyle/main/requirements.txt \
+        -r https://raw.githubusercontent.com/yolain/ComfyUI-Easy-Use/main/requirements.txt \
+        -r https://raw.githubusercontent.com/Mamaaaamooooo/batchImg-rembg-ComfyUI-nodes/main/requirements.txt \
+        -r https://raw.githubusercontent.com/huchenlei/ComfyUI-layerdiffuse/main/requirements.txt
 
 
 # # Additional deps for ComfyUI-3D-Pack (prebuilt by me)
@@ -139,6 +136,7 @@ RUN printf 'CREATE_MAIL_SPOOL=no' >> /etc/default/useradd \
     && chown runner:runner /home/runner /home/scripts
 
 COPY --chown=runner:runner scripts/. /home/scripts/
+COPY --chown=runner:runner update/. /home/update/
 
 USER runner:runner
 VOLUME /home/runner

@@ -1,12 +1,12 @@
 # sd
-https://huggingface.co/wtz37/flat_Lunar_sushi/blob/main/flatLunarSushi_v10.safetensors
-  dir=models/Stable-diffusion
-  flatLunarSushi_v10.safetensors
+https://huggingface.co/wtz37/flat_Lunar_sushi/resolve/main/flatLunarSushi_v10.safetensors
+  dir=models/checkpoints
+  out=flatLunarSushi_v10.safetensors
 
 # sdxl
-https://huggingface.co/CalypsoCrunchies99/sdxlyamersanimeulturaysAnimev4_vaefix/blob/main/unet/diffusion_pytorch_model.safetensors
-  dir=models/Stable-diffusion
-  sdxlYamersAnimeUltra_ysAnimeV4.safetensors
+https://huggingface.co/CalypsoCrunchies99/sdxlyamersanimeulturaysAnimev4_vaefix/resolve/main/unet/diffusion_pytorch_model.safetensors
+  dir=models/checkpoints
+  out=sdxlYamersAnimeUltra_ysAnimeV4.safetensors
 
 # Stable Cascade
 
@@ -73,9 +73,9 @@ https://huggingface.co/lenML/DeepNegative/resolve/main/NG_DeepNegative_V1_75T.pt
 
 # CLIP Vision
 
-https://huggingface.co/laion/CLIP-ViT-H-14-laion2B-s32B-b79K/blob/main/model.safetensors
+https://huggingface.co/laion/CLIP-ViT-H-14-laion2B-s32B-b79K/resolve/main/model.safetensors
   dir=models/clip_vision
-  CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors
+  out=CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors
 
 # https://huggingface.co/openai/clip-vit-large-patch14/resolve/main/model.safetensors
 #   dir=models/clip_vision
@@ -154,6 +154,19 @@ https://huggingface.co/laion/CLIP-ViT-H-14-laion2B-s32B-b79K/blob/main/model.saf
 
 
 # IPAdapter
-https://huggingface.co/InvokeAI/ip_adapter_plus_sd15/blob/main/ip-adapter-plus_sd15.safetensors
+https://huggingface.co/InvokeAI/ip_adapter_plus_sd15/resolve/main/ip-adapter-plus_sd15.safetensors
   dir=models/ipadapter
   out=ip-adapter-plus_sd15.safetensors
+
+# layerdiffusion
+https://huggingface.co/LayerDiffusion/layerdiffusion-v1/resolve/main/layer_xl_fg2ble.safetensors
+  dir=models/layer_model
+  out=layer_xl_fg2ble.safetensors
+
+https://huggingface.co/LayerDiffusion/layerdiffusion-v1/resolve/main/layer_xl_fgble2bg.safetensors
+  dir=models/layer_model
+  out=layer_xl_fgble2bg.safetensors
+
+https://huggingface.co/LayerDiffusion/layerdiffusion-v1/resolve/main/layer_xl_bg2ble.safetensors
+  dir=models/layer_model
+  out=layer_xl_bg2ble.safetensors
