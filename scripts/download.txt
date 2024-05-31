@@ -1,5 +1,5 @@
 # sd
-https://huggingface.co/philz1337x/flat2DAnimerge_v45Sharp/blob/main/flat2DAnimerge_v45Sharp.safetensors
+https://huggingface.co/wtz37/flat_Lunar_sushi/blob/main/flatLunarSushi_v10.safetensors
   dir=models/Stable-diffusion
   flatLunarSushi_v10.safetensors
 

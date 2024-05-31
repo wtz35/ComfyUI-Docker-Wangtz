@@ -140,6 +140,21 @@ RUN printf 'CREATE_MAIL_SPOOL=no' >> /etc/default/useradd \
 
 COPY --chown=runner:runner scripts/. /home/scripts/
 
+# 更新和安装必要的工具
+RUN apt-get update && apt-get install -y git aria2
+
+# 设置工作目录
+WORKDIR /home/runner
+
+# 确保脚本具有执行权限，并根据条件执行脚本
+RUN if [ ! -f "/home/runner/.download-complete" ]; then \
+        echo "start download"; \
+        chmod +x /home/scripts/download.sh && \
+        bash /home/scripts/download.sh; \
+    else \
+        echo "download completed"; \
+    fi
+
 USER runner:runner
 VOLUME /home/runner
 WORKDIR /home/runner
