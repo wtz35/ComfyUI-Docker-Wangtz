@@ -4,7 +4,7 @@ https://huggingface.co/wtz37/flat_Lunar_sushi/resolve/main/flatLunarSushi_v10.sa
   out=flatLunarSushi_v10.safetensors
 
 # sdxl
-https://huggingface.co/CalypsoCrunchies99/sdxlyamersanimeulturaysAnimev4_vaefix/resolve/main/unet/diffusion_pytorch_model.safetensors
+https://huggingface.co/wtz37/sdxlYamersAnimeUltra4/resolve/main/sdxlYamersAnimeUltra_ysAnimeV4.safetensors
   dir=models/checkpoints
   out=sdxlYamersAnimeUltra_ysAnimeV4.safetensors
 
