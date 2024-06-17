@@ -83,7 +83,8 @@ RUN --mount=type=cache,target=/root/.cache/pip \
         -r https://raw.githubusercontent.com/chflame163/ComfyUI_LayerStyle/main/requirements.txt \
         -r https://raw.githubusercontent.com/yolain/ComfyUI-Easy-Use/main/requirements.txt \
         -r https://raw.githubusercontent.com/Mamaaaamooooo/batchImg-rembg-ComfyUI-nodes/main/requirements.txt \
-        -r https://raw.githubusercontent.com/huchenlei/ComfyUI-layerdiffuse/main/requirements.txt
+        -r https://raw.githubusercontent.com/huchenlei/ComfyUI-layerdiffuse/main/requirements.txt \
+        -r https://raw.githubusercontent.com/Fannovel16/comfyui_controlnet_aux/main/requirements.txt
 
 
 # # Additional deps for ComfyUI-3D-Pack (prebuilt by me)

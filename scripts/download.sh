@@ -72,6 +72,12 @@ git clone --depth=1 --no-tags --recurse-submodules --shallow-submodules \
     https://github.com/huchenlei/ComfyUI-layerdiffuse.git \
     || (cd /home/runner/ComfyUI/custom_nodes/ComfyUI-layerdiffuse && git pull)
 
+# comfyui_controlnet_aux
+cd /home/runner/ComfyUI/custom_nodes
+git clone --depth=1 --no-tags --recurse-submodules --shallow-submodules \
+    https://github.com/Fannovel16/comfyui_controlnet_aux.git \
+    || (cd /home/runner/ComfyUI/custom_nodes/comfyui_controlnet_aux && git pull)
+
 # ComfyUI-Custom-node-wtz
 cd /home/runner/ComfyUI/custom_nodes
 git clone --depth=1 --no-tags --recurse-submodules --shallow-submodules \
