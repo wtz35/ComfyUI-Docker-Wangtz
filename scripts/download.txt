@@ -187,8 +187,8 @@ https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter-plus-f
 # contrlnet sdxl
 https://huggingface.co/xinsir/controlnet-openpose-sdxl-1.0/resolve/main/diffusion_pytorch_model.safetensors
     dir=models/controlnet
-    out=openpose_sdxl.safetensors
+    out=sdxl_openpose.safetensors
   
 https://huggingface.co/xinsir/controlnet-canny-sdxl-1.0/resolve/main/diffusion_pytorch_model_V2.safetensors
     dir=models/controlnet
-    out=openpose_sdxl.safetensors
+    out=sdxl_canny.safetensors
