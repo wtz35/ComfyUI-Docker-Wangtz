@@ -72,6 +72,12 @@ git clone --depth=1 --no-tags --recurse-submodules --shallow-submodules \
     https://github.com/huchenlei/ComfyUI-layerdiffuse.git \
     || (cd /home/runner/ComfyUI/custom_nodes/ComfyUI-layerdiffuse && git pull)
 
+# ComfyUI-Custom-node-wtz
+cd /home/runner/ComfyUI/custom_nodes
+git clone --depth=1 --no-tags --recurse-submodules --shallow-submodules \
+    https://github.com/wtz35/ComfyUI-Custom-node-wtz.git \
+    || (cd /home/runner/ComfyUI/custom_nodes/ComfyUI-Custom-node-wtz && git pull)
+
 echo "########################################"
 echo "[INFO] Downloading Models..."
 echo "########################################"

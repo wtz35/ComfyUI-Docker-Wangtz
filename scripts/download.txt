@@ -1,12 +1,16 @@
-# sd
-https://huggingface.co/wtz37/flat_Lunar_sushi/resolve/main/flatLunarSushi_v10.safetensors
-  dir=models/checkpoints
-  out=flatLunarSushi_v10.safetensors
+# # sd
+# https://huggingface.co/wtz37/flat_Lunar_sushi/resolve/main/flatLunarSushi_v10.safetensors
+#   dir=models/checkpoints
+#   out=flatLunarSushi_v10.safetensors
 
 # sdxl
-https://huggingface.co/wtz37/sdxlYamersAnimeUltra4/resolve/main/sdxlYamersAnimeUltra_ysAnimeV4.safetensors
+https://huggingface.co/bluepen5805/blue_pencil-XL/resolve/main/blue_pencil-XL-v6.0.0.safetensors
   dir=models/checkpoints
-  out=sdxlYamersAnimeUltra_ysAnimeV4.safetensors
+  out=bluePencilXL_v600.safetensors
+
+https://huggingface.co/yodayo-ai/holodayo-xl-2.1/resolve/main/holodayo-xl-2.1.safetensors
+  dir=models/checkpoints
+  out=holodayo-xl-2.1.safetensors
 
 # Stable Cascade
 
@@ -153,20 +157,38 @@ https://huggingface.co/laion/CLIP-ViT-H-14-laion2B-s32B-b79K/resolve/main/model.
 
 
 
-# IPAdapter
-https://huggingface.co/InvokeAI/ip_adapter_plus_sd15/resolve/main/ip-adapter-plus_sd15.safetensors
-  dir=models/ipadapter
-  out=ip-adapter-plus_sd15.safetensors
+# # IPAdapter
+# https://huggingface.co/InvokeAI/ip_adapter_plus_sd15/resolve/main/ip-adapter-plus_sd15.safetensors
+#   dir=models/ipadapter
+#   out=ip-adapter-plus_sd15.safetensors
+# 
+# # layerdiffusion
+# https://huggingface.co/LayerDiffusion/layerdiffusion-v1/resolve/main/layer_xl_fg2ble.safetensors
+#   dir=models/layer_model
+#   out=layer_xl_fg2ble.safetensors
+# 
+# https://huggingface.co/LayerDiffusion/layerdiffusion-v1/resolve/main/layer_xl_fgble2bg.safetensors
+#   dir=models/layer_model
+#   out=layer_xl_fgble2bg.safetensors
+# 
+# https://huggingface.co/LayerDiffusion/layerdiffusion-v1/resolve/main/layer_xl_bg2ble.safetensors
+#   dir=models/layer_model
+#   out=layer_xl_bg2ble.safetensors
 
-# layerdiffusion
-https://huggingface.co/LayerDiffusion/layerdiffusion-v1/resolve/main/layer_xl_fg2ble.safetensors
-  dir=models/layer_model
-  out=layer_xl_fg2ble.safetensors
+# IPAdapter sdxl
+https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter-plus_sdxl_vit-h.safetensors
+    dir=models/ipadapter
+    out=ip-adapter-plus_sdxl_vit-h.safetensors
 
-https://huggingface.co/LayerDiffusion/layerdiffusion-v1/resolve/main/layer_xl_fgble2bg.safetensors
-  dir=models/layer_model
-  out=layer_xl_fgble2bg.safetensors
+https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter-plus-face_sdxl_vit-h.safetensors
+    dir=models/ipadapter
+    out=ip-adapter-plus-face_sdxl_vit-h.safetensors
 
-https://huggingface.co/LayerDiffusion/layerdiffusion-v1/resolve/main/layer_xl_bg2ble.safetensors
-  dir=models/layer_model
-  out=layer_xl_bg2ble.safetensors
+# contrlnet sdxl
+https://huggingface.co/xinsir/controlnet-openpose-sdxl-1.0/resolve/main/diffusion_pytorch_model.safetensors
+    dir=models/controlnet
+    out=openpose_sdxl.safetensors
+  
+https://huggingface.co/xinsir/controlnet-canny-sdxl-1.0/resolve/main/diffusion_pytorch_model_V2.safetensors
+    dir=models/controlnet
+    out=openpose_sdxl.safetensors
