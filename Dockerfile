@@ -83,7 +83,9 @@ RUN --mount=type=cache,target=/root/.cache/pip \
         -r https://raw.githubusercontent.com/chflame163/ComfyUI_LayerStyle/main/requirements.txt \
         -r https://raw.githubusercontent.com/yolain/ComfyUI-Easy-Use/main/requirements.txt \
         -r https://raw.githubusercontent.com/Mamaaaamooooo/batchImg-rembg-ComfyUI-nodes/main/requirements.txt \
-        -r https://raw.githubusercontent.com/huchenlei/ComfyUI-layerdiffuse/main/requirements.txt
+        -r https://raw.githubusercontent.com/huchenlei/ComfyUI-layerdiffuse/main/requirements.txt \
+        -r https://raw.githubusercontent.com/Fannovel16/comfyui_controlnet_aux/main/requirements.txt \
+        -r https://raw.githubusercontent.com/Kosinkadink/ComfyUI-Advanced-ControlNet/main/requirements.txt
 
 
 # # Additional deps for ComfyUI-3D-Pack (prebuilt by me)
@@ -138,7 +140,29 @@ RUN printf 'CREATE_MAIL_SPOOL=no' >> /etc/default/useradd \
 COPY --chown=runner:runner scripts/. /home/scripts/
 COPY --chown=runner:runner update/. /home/update/
 
+# 强制安装特定版本的 numpy
+RUN pip3 install --no-cache-dir numpy==1.26.4
+
 USER runner:runner
+
+WORKDIR /home/models/sdxl
+# sdxl
+RUN wget -O bluePencilXL_v600.safetensors https://huggingface.co/bluepen5805/blue_pencil-XL/resolve/main/blue_pencil-XL-v6.0.0.safetensors
+
+RUN wget -O holodayo-xl-2.1.safetensors https://huggingface.co/yodayo-ai/holodayo-xl-2.1/resolve/main/holodayo-xl-2.1.safetensors
+
+WORKDIR /home/models/IPAdapter_sdxl
+# IPAdapter sdxl
+RUN wget -O ip-adapter-plus_sdxl_vit-h.safetensors https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter-plus_sdxl_vit-h.safetensors
+
+RUN wget -O ip-adapter-plus-face_sdxl_vit-h.safetensors https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter-plus-face_sdxl_vit-h.safetensors
+
+WORKDIR /home/models/contrlnet_sdxl
+# contrlnet sdxl
+RUN wget -O sdxl_openpose.safetensors https://huggingface.co/xinsir/controlnet-openpose-sdxl-1.0/resolve/main/diffusion_pytorch_model.safetensors
+  
+RUN wget -O sdxl_canny.safetensors https://huggingface.co/xinsir/controlnet-canny-sdxl-1.0/resolve/main/diffusion_pytorch_model_V2.safetensors
+
 VOLUME /home/runner
 WORKDIR /home/runner
 EXPOSE 8188
