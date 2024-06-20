@@ -78,6 +78,18 @@ git clone --depth=1 --no-tags --recurse-submodules --shallow-submodules \
     https://github.com/Fannovel16/comfyui_controlnet_aux.git \
     || (cd /home/runner/ComfyUI/custom_nodes/comfyui_controlnet_aux && git pull)
 
+# ComfyUI_smZNodes
+cd /home/runner/ComfyUI/custom_nodes
+git clone --depth=1 --no-tags --recurse-submodules --shallow-submodules \
+    https://github.com/shiimizu/ComfyUI_smZNodes.git \
+    || (cd /home/runner/ComfyUI/custom_nodes/ComfyUI_smZNodes && git pull)
+
+# ComfyUI-Advanced-ControlNet
+cd /home/runner/ComfyUI/custom_nodes
+git clone --depth=1 --no-tags --recurse-submodules --shallow-submodules \
+    https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet.git \
+    || (cd /home/runner/ComfyUI/custom_nodes/ComfyUI-Advanced-ControlNet && git pull)
+
 # ComfyUI-Custom-node-wtz
 cd /home/runner/ComfyUI/custom_nodes
 git clone --depth=1 --no-tags --recurse-submodules --shallow-submodules \

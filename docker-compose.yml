@@ -7,7 +7,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: "wangtz34/comfyui-test-work"
+    image: "wangtz34/comfyui-boot-1"
     user: "root"
     volumes: 
       - "./storage:/home/runner"
@@ -22,7 +22,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: "wangtz34/comfyui-test-work"
+    image: "wangtz34/comfyui-boot-1"
     ports:
       - "8188:8188"
     volumes:

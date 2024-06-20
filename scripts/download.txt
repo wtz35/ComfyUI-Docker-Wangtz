@@ -12,6 +12,31 @@ https://huggingface.co/yodayo-ai/holodayo-xl-2.1/resolve/main/holodayo-xl-2.1.sa
   dir=models/checkpoints
   out=holodayo-xl-2.1.safetensors
 
+# lora
+https://huggingface.co/wtz37/loras/resolve/main/add-detail-xl.safetensors
+  dir=models/loras
+  out=add-detail-xl.safetensors
+
+https://huggingface.co/wtz37/loras/resolve/main/feet%20v3.safetensors
+  dir=models/loras
+  out=feet v3.safetensors
+
+https://huggingface.co/wtz37/loras/resolve/main/flat-color-style_A3.1_XL.safetensors
+  dir=models/loras
+  out=flat-color-style_A3.1_XL.safetensors
+
+https://huggingface.co/wtz37/loras/resolve/main/hand%204.safetensors
+  dir=models/loras
+  out=hand 4.safetensors
+
+https://huggingface.co/wtz37/loras/resolve/main/perfection%20style.safetensors
+  dir=models/loras
+  out=perfection style.safetensors
+
+https://huggingface.co/wtz37/loras/resolve/main/sketch-style-xl.safetensors
+  dir=models/loras
+  out=sketch-style-xl.safetensors
+
 # Stable Cascade
 
 #https://huggingface.co/stabilityai/stable-cascade/resolve/main/comfyui_checkpoints/stable_cascade_stage_c.safetensors

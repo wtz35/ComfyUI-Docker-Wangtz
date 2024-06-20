@@ -84,7 +84,8 @@ RUN --mount=type=cache,target=/root/.cache/pip \
         -r https://raw.githubusercontent.com/yolain/ComfyUI-Easy-Use/main/requirements.txt \
         -r https://raw.githubusercontent.com/Mamaaaamooooo/batchImg-rembg-ComfyUI-nodes/main/requirements.txt \
         -r https://raw.githubusercontent.com/huchenlei/ComfyUI-layerdiffuse/main/requirements.txt \
-        -r https://raw.githubusercontent.com/Fannovel16/comfyui_controlnet_aux/main/requirements.txt
+        -r https://raw.githubusercontent.com/Fannovel16/comfyui_controlnet_aux/main/requirements.txt \
+        -r https://raw.githubusercontent.com/Kosinkadink/ComfyUI-Advanced-ControlNet/main/requirements.txt
 
 
 # # Additional deps for ComfyUI-3D-Pack (prebuilt by me)
@@ -138,6 +139,9 @@ RUN printf 'CREATE_MAIL_SPOOL=no' >> /etc/default/useradd \
 
 COPY --chown=runner:runner scripts/. /home/scripts/
 COPY --chown=runner:runner update/. /home/update/
+
+# 强制安装特定版本的 numpy
+RUN pip3 install --no-cache-dir numpy==1.26.4
 
 USER runner:runner
 VOLUME /home/runner
