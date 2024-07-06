@@ -18,6 +18,9 @@ if [ ! -f "/home/runner/.download-complete" ] ; then
     bash /home/scripts/download.sh
 fi ;
 
+# 创建文件夹
+mkdir -p /home/runner/ComfyUI/models/ipadapter
+
 # 移动下载的文件到指定目录
 mv /home/models/sdxl/* /home/runner/ComfyUI/models/checkpoints
 mv /home/models/IPAdapter_sdxl/* /home/runner/ComfyUI/models/ipadapter
