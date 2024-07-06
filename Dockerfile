@@ -39,6 +39,44 @@ RUN --mount=type=cache,target=/root/.cache/pip \
         --index-url https://download.pytorch.org/whl/cu121 \
         --extra-index-url https://pypi.org/simple
 
+# Create a low-privilege user
+RUN printf 'CREATE_MAIL_SPOOL=no' >> /etc/default/useradd \
+    && mkdir -p /home/runner /home/scripts \
+    && groupadd runner \
+    && useradd runner -g runner -d /home/runner \
+    && chown runner:runner /home/runner /home/scripts
+
+# 安装 wget
+RUN zypper refresh && \
+zypper install -y wget && \
+zypper clean -a
+
+USER runner:runner
+
+WORKDIR /home/models/sdxl
+# sdxl
+RUN wget -O bluePencilXL_v600.safetensors https://huggingface.co/bluepen5805/blue_pencil-XL/resolve/main/blue_pencil-XL-v6.0.0.safetensors
+
+RUN wget -O holodayo-xl-2.1.safetensors https://huggingface.co/yodayo-ai/holodayo-xl-2.1/resolve/main/holodayo-xl-2.1.safetensors
+
+RUN wget -O duchaitenPonyXLNo_ponyNoScoreV40.safetensors https://huggingface.co/LyliaEngine/Duchaiten_PonyXL-No_Pony-No_Score-V40/resolve/main/duchaitenPonyXLNo_ponyNoScoreV40.safetensors
+
+RUN wget -O hadrianDelicexlPony_v20l.safetensors https://huggingface.co/Junity/hadrianDelicexlPony_v20l/resolve/main/hadrianDelicexlPony_v20l.safetensors
+
+WORKDIR /home/models/IPAdapter_sdxl
+# IPAdapter sdxl
+RUN wget -O ip-adapter-plus_sdxl_vit-h.safetensors https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter-plus_sdxl_vit-h.safetensors
+
+RUN wget -O ip-adapter-plus-face_sdxl_vit-h.safetensors https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter-plus-face_sdxl_vit-h.safetensors
+
+WORKDIR /home/models/contrlnet_sdxl
+# contrlnet sdxl
+RUN wget -O sdxl_openpose.safetensors https://huggingface.co/xinsir/controlnet-openpose-sdxl-1.0/resolve/main/diffusion_pytorch_model.safetensors
+
+RUN wget -O sdxl_canny.safetensors https://huggingface.co/xinsir/controlnet-canny-sdxl-1.0/resolve/main/diffusion_pytorch_model_V2.safetensors
+
+USER root
+
 # Dependencies for frequently-used
 # (Do this firstly so PIP won't be solving too many deps at one time)
 RUN --mount=type=cache,target=/root/.cache/pip \
@@ -129,13 +167,6 @@ ENV LD_LIBRARY_PATH="${LD_LIBRARY_PATH}\
 :/usr/lib/python3.11/site-packages/nvidia/nccl/lib\
 :/usr/lib/python3.11/site-packages/nvidia/nvjitlink/lib\
 :/usr/lib/python3.11/site-packages/nvidia/nvtx/lib"
-
-# Create a low-privilege user
-RUN printf 'CREATE_MAIL_SPOOL=no' >> /etc/default/useradd \
-    && mkdir -p /home/runner /home/scripts \
-    && groupadd runner \
-    && useradd runner -g runner -d /home/runner \
-    && chown runner:runner /home/runner /home/scripts
 
 COPY --chown=runner:runner scripts/. /home/scripts/
 COPY --chown=runner:runner update/. /home/update/

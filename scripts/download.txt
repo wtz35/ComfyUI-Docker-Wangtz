@@ -3,15 +3,15 @@
 #   dir=models/checkpoints
 #   out=flatLunarSushi_v10.safetensors
 
-# sdxl
-https://huggingface.co/bluepen5805/blue_pencil-XL/resolve/main/blue_pencil-XL-v6.0.0.safetensors
-  dir=models/checkpoints
-  out=bluePencilXL_v600.safetensors
-
-https://huggingface.co/yodayo-ai/holodayo-xl-2.1/resolve/main/holodayo-xl-2.1.safetensors
-  dir=models/checkpoints
-  out=holodayo-xl-2.1.safetensors
-
+# # sdxl
+# https://huggingface.co/bluepen5805/blue_pencil-XL/resolve/main/blue_pencil-XL-v6.0.0.safetensors
+#   dir=models/checkpoints
+#   out=bluePencilXL_v600.safetensors
+# 
+# https://huggingface.co/yodayo-ai/holodayo-xl-2.1/resolve/main/holodayo-xl-2.1.safetensors
+#   dir=models/checkpoints
+#   out=holodayo-xl-2.1.safetensors
+  
 # lora
 https://huggingface.co/wtz37/loras/resolve/main/add-detail-xl.safetensors
   dir=models/loras
@@ -200,20 +200,20 @@ https://huggingface.co/laion/CLIP-ViT-H-14-laion2B-s32B-b79K/resolve/main/model.
 #   dir=models/layer_model
 #   out=layer_xl_bg2ble.safetensors
 
-# IPAdapter sdxl
-https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter-plus_sdxl_vit-h.safetensors
-    dir=models/ipadapter
-    out=ip-adapter-plus_sdxl_vit-h.safetensors
-
-https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter-plus-face_sdxl_vit-h.safetensors
-    dir=models/ipadapter
-    out=ip-adapter-plus-face_sdxl_vit-h.safetensors
-
-# contrlnet sdxl
-https://huggingface.co/xinsir/controlnet-openpose-sdxl-1.0/resolve/main/diffusion_pytorch_model.safetensors
-    dir=models/controlnet
-    out=sdxl_openpose.safetensors
-  
-https://huggingface.co/xinsir/controlnet-canny-sdxl-1.0/resolve/main/diffusion_pytorch_model_V2.safetensors
-    dir=models/controlnet
-    out=sdxl_canny.safetensors
+# # IPAdapter sdxl
+# https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter-plus_sdxl_vit-h.safetensors
+#     dir=models/ipadapter
+#     out=ip-adapter-plus_sdxl_vit-h.safetensors
+# 
+# https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter-plus-face_sdxl_vit-h.safetensors
+#     dir=models/ipadapter
+#     out=ip-adapter-plus-face_sdxl_vit-h.safetensors
+# 
+# # contrlnet sdxl
+# https://huggingface.co/xinsir/controlnet-openpose-sdxl-1.0/resolve/main/diffusion_pytorch_model.safetensors
+#     dir=models/controlnet
+#     out=sdxl_openpose.safetensors
+#   
+# https://huggingface.co/xinsir/controlnet-canny-sdxl-1.0/resolve/main/diffusion_pytorch_model_V2.safetensors
+#     dir=models/controlnet
+#     out=sdxl_canny.safetensors
