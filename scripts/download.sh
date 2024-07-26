@@ -96,15 +96,15 @@ git clone --depth=1 --no-tags --recurse-submodules --shallow-submodules \
     https://github.com/wtz35/ComfyUI-Custom-node-wtz.git \
     || (cd /home/runner/ComfyUI/custom_nodes/ComfyUI-Custom-node-wtz && git pull)
 
-echo "########################################"
-echo "[INFO] Downloading Models..."
-echo "########################################"
+# echo "########################################"
+# echo "[INFO] Downloading Models..."
+# echo "########################################"
 
-# Models
+# # Models
 cd /home/runner/ComfyUI
-aria2c --input-file=/home/scripts/download.txt \
-    --allow-overwrite=false --auto-file-renaming=false --continue=true \
-    --max-connection-per-server=5
+# aria2c --input-file=/home/scripts/download.txt \
+#     --allow-overwrite=false --auto-file-renaming=false --continue=true \
+#     --max-connection-per-server=5
 
 # Finish
 touch /home/runner/.download-complete

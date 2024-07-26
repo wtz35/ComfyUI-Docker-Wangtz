@@ -63,6 +63,10 @@ RUN wget -O duchaitenPonyXLNo_ponyNoScoreV40.safetensors https://huggingface.co/
 
 RUN wget -O hadrianDelicexlPony_v20l.safetensors https://huggingface.co/Junity/hadrianDelicexlPony_v20l/resolve/main/hadrianDelicexlPony_v20l.safetensors
 
+RUN wget -O duchaitenPonyReal_ponyRealV10.safetensors https://huggingface.co/wtz37/2.5d/resolve/main/duchaitenPonyReal_ponyRealV10.safetensors
+
+RUN wget -O animagineXLV31_v31.safetensors https://huggingface.co/wtz37/yinv_model/resolve/main/animagineXLV31_v31.safetensors
+
 WORKDIR /home/models/IPAdapter_sdxl
 # IPAdapter sdxl
 RUN wget -O ip-adapter-plus_sdxl_vit-h.safetensors https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter-plus_sdxl_vit-h.safetensors
@@ -74,6 +78,52 @@ WORKDIR /home/models/contrlnet_sdxl
 RUN wget -O sdxl_openpose.safetensors https://huggingface.co/xinsir/controlnet-openpose-sdxl-1.0/resolve/main/diffusion_pytorch_model.safetensors
 
 RUN wget -O sdxl_canny.safetensors https://huggingface.co/xinsir/controlnet-canny-sdxl-1.0/resolve/main/diffusion_pytorch_model_V2.safetensors
+
+WORKDIR /home/models/loras
+# lora
+RUN wget -O add-detail-xl.safetensors https://huggingface.co/wtz37/loras/resolve/main/add-detail-xl.safetensors
+
+RUN wget -O feet_v3.safetensors https://huggingface.co/wtz37/loras/resolve/main/feet%20v3.safetensors
+
+RUN wget -O flat-color-style_A3.1_XL.safetensors https://huggingface.co/wtz37/loras/resolve/main/flat-color-style_A3.1_XL.safetensors
+
+RUN wget -O hand_4.safetensors https://huggingface.co/wtz37/loras/resolve/main/hand%204.safetensors
+
+RUN wget -O perfection_style.safetensors https://huggingface.co/wtz37/loras/resolve/main/perfection%20style.safetensors
+
+RUN wget -O sketch-style-xl.safetensors https://huggingface.co/wtz37/loras/resolve/main/sketch-style-xl.safetensors
+
+RUN wget -O wrenchftmfshnxl.safetensors https://huggingface.co/wtz37/yinv_lora/resolve/main/wrenchftmfshnxl.safetensors
+
+
+# VAE
+WORKDIR /home/models/vae
+
+RUN wget -O vae-ft-mse-840000-ema-pruned.safetensors https://huggingface.co/stabilityai/sd-vae-ft-mse-original/resolve/main/vae-ft-mse-840000-ema-pruned.safetensors
+
+WORKDIR /home/models/vae_approx
+
+RUN wget -O taesd_decoder.safetensors https://huggingface.co/madebyollin/taesd/resolve/main/taesd_decoder.safetensors
+
+RUN wget -O taesdxl_decoder.safetensors https://huggingface.co/madebyollin/taesdxl/resolve/main/taesdxl_decoder.safetensors
+
+
+# Upscale
+WORKDIR /home/models/upscale_models
+
+RUN wget -O 4x-AnimeSharp.pth https://huggingface.co/Kim2091/AnimeSharp/resolve/main/4x-AnimeSharp.pth
+
+# Embeddings
+WORKDIR /home/models/embeddings
+
+RUN wget -O easynegative.safetensors https://huggingface.co/datasets/gsdf/EasyNegative/resolve/main/EasyNegative.safetensors
+
+RUN wget -O ng_deepnegative_v1_75t.pt https://huggingface.co/lenML/DeepNegative/resolve/main/NG_DeepNegative_V1_75T.pt
+
+# CLIP Vision
+WORKDIR /home/models/clip_vision
+
+RUN wget -O CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors https://huggingface.co/laion/CLIP-ViT-H-14-laion2B-s32B-b79K/resolve/main/model.safetensors
 
 USER root
 
@@ -122,8 +172,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
         -r https://raw.githubusercontent.com/yolain/ComfyUI-Easy-Use/main/requirements.txt \
         -r https://raw.githubusercontent.com/Mamaaaamooooo/batchImg-rembg-ComfyUI-nodes/main/requirements.txt \
         -r https://raw.githubusercontent.com/huchenlei/ComfyUI-layerdiffuse/main/requirements.txt \
-        -r https://raw.githubusercontent.com/Fannovel16/comfyui_controlnet_aux/main/requirements.txt \
-        -r https://raw.githubusercontent.com/Kosinkadink/ComfyUI-Advanced-ControlNet/main/requirements.txt
+        -r https://raw.githubusercontent.com/Fannovel16/comfyui_controlnet_aux/main/requirements.txt
 
 
 # # Additional deps for ComfyUI-3D-Pack (prebuilt by me)
